@@ -1,0 +1,535 @@
+.main {
+    min-width: 800px;
+  }
+
+  h1 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size:30px;
+  }
+  
+/* 全体のデザイン調整 */
+.contact-form {
+  width: 70%;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+  input[type="text"] {
+    width: 30%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 6px 12px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555;
+  }
+
+  input[type="submit"] {
+    margin-top: 30px;
+    width: 30%;
+    border: 1px solid #5cb85c;
+    border-radius: 4px;
+    padding: 12px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: white;
+    background-color: #5cb85c;
+  }
+  
+  textarea {
+    width: 50%;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 6px 12px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555;
+  } 
+
+  /* sent.php用 */
+   .thanks-message {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  .display-contact {
+    width: 70%;
+    margin: 30px auto;
+    padding: 50px;
+    background-color: #F5F5F5;
+    color: #333;
+  }
+
+.card {
+  padding:0 auto;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 70%;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding-bottom:30px;
+}
+
+.read-more {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.read-title {
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(90deg, #35a4ee, #b5f8c2); /* 左から右に青から紫へのグラデーション */
+  color: white;
+  font-size: 14px;
+  margin-bottom:20px;
+  margin-top:95px;
+}
+
+
+.card_count {
+  width: 70%;
+  display: flex;
+  margin: 0 auto;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  margin-top: 10px;
+}
+
+.card_title {
+  border-bottom:1px solid gray;
+}
+
+/* headerの装飾 */
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  display: flex;
+  align-items: center; /* 垂直方向に中央寄せ（必要に応じて削除） */
+  flex-direction: column; /* カードを縦に並べる */
+  min-height: 83vh; /* 画面全体の高さを確保 */
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  color: white;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.main-nav ul li {
+  margin-left: 20px;
+}
+
+.main-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+  background-color: #007575; /* ホバー時の背景色 */
+}
+
+.icon a img {
+  width: 40px; /* アイコンのサイズ調整 */
+  height: auto;
+}
+
+        /* ボタンスタイル */
+        .new {
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        h2 {
+            color: #00b8b8;
+        }
+
+
+
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-save,
+        .btn-preview {
+            background-color: #007575;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-save:hover,
+        .btn-preview:hover {
+            background-color: #005757;
+        }
+
+        .form-section {
+            background-color: #e9f7f7;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .warning {
+            color: red;
+            font-size: 12px;
+        }
+
+        /* ユーザー画面のCSS */
+
+        .user-header {
+          width: 100%;
+          padding: 15px 0;
+          background-color: white;
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 1000; /* コンテンツの上に表示させるためにz-indexを設定 */
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ヘッダーに軽い影をつけることで視認性を向上 */
+      }
+
+        .user-container {
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .user-logo a {
+          color:#00b8b8;
+          font-size: 1.5em;
+          text-decoration: none;
+        }
+        
+        .user-nav ul {
+          display: flex;
+          list-style: none;
+        }
+        
+        .user-nav ul li {
+          margin-left: 20px;
+        }
+        
+        .user-nav ul li a {
+          color:#00b8b8;
+          text-decoration: none;
+          font-size: 1em;
+          padding: 5px 10px;
+          border-radius: 5px;
+          transition: background-color 0.3s ease;
+        }
+        
+        .user-nav ul li a:hover {
+          background-color: #dbfafa; /* ホバー時の背景色 */
+        }
+
+        .card_count {
+          text-align: left;
+        }
+
+/* header固定 */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #a2d9ff, #a3e3a1);
+  color: white;
+  padding: 15px 0;
+  z-index: 1000; /* コンテンツの上に表示させるためにz-indexを設定 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header .logo a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* メニューアイテムのデザイン */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.main-nav ul li a {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.icon a img {
+  width: 40px; /* アイコンのサイズ調整 */
+  height: auto;
+}
+
+/* タブレットサイズ以下のレスポンシブル対応 */
+
+/* メディアクエリでタブレット以下の画面対応 */
+@media (max-width: 768px) {
+  .main-nav ul li a .menu-text {
+      display: none; /* テキストを非表示に */
+  }
+
+  .main-nav ul li a {
+      padding: 10px; /* アイコンのみの表示 */
+  }
+
+  .main-nav ul li a i {
+      font-size: 20px; /* アイコンサイズ調整 */
+  }
+}
+
+.site-header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header .logo a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* メニューアイテムのデザイン */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.main-nav ul li a {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.main-nav ul li a i {
+  font-size: 18px; /* アイコンサイズ */
+  margin-right: 8px;
+}
+
+
+
+
+      /* フォームスタイル */
+      #post {
+          display: none;
+          background-color: white;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+          margin-top: 120px;
+          padding-top: 20px;
+          width: 70%;
+      }
+
+      h2 {
+          color: #00b8b8;
+      }
+
+      label {
+          font-weight: bold;
+          margin-top: 10px;
+          display: block;
+      }
+
+      input[type="text"],
+      textarea,
+      select {
+          width: 100%;
+          padding: 10px;
+          margin-top: 5px;
+          margin-bottom: 20px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+      }
+
+      textarea {
+          height: 100px;
+      }
+
+      .form-section {
+          background-color: #e9f7f7;
+          padding: 20px;
+          border-radius: 10px;
+          margin-bottom: 30px;
+      }
+
+      .warning {
+          color: red;
+          font-size: 12px;
+      }
+
+
+      .working_time {
+          display: flex;
+      }
+/* 
+      .tags {
+        display: flex;
+      } */
+
+      .tag {
+        display: inline-block;
+        background-color: #d6f7eb;
+        color: #00b8b8;
+        border: none;
+        border-radius: 5px;
+        padding: 2px 8px;
+        margin-right: 5px;
+        font-size: 12px;
+        cursor: pointer; /* ポインターを追加 */
+        transition: background-color 0.3s ease, color 0.3s ease; /* アニメーション効果も追加 */
+      }
+
+      .tag.selected {
+    background-color: #007575 !important;
+    color: white !important;
+}
+
+.tag.selected i {
+  color: white !important;
+}
+
+.tag-selection {
+  width: 80%;
+  padding-bottom:20px;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top:10px;
+}
+
+p {
+  font-size:14px;
+}
+
+.read-only .tag {
+  pointer-events: none; /* クリックできないようにする */
+  cursor: default; /* 通常のポインタにする */
+}
+
+/* 通常表示（PC画面） */
+.nav-menu li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+.nav-menu li a i {
+    margin-right: 8px; /* アイコンとテキストの間に隙間を作る */
+}
+
+/* タブレット以下の表示 */
+@media (max-width: 768px) {
+    .nav-menu li a {
+        justify-content: center;
+    }
+    .nav-menu li a span {
+        display: none; /* テキストを非表示にする */
+    }
+}
