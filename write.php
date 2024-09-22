@@ -20,7 +20,7 @@ $job_description = nl2br($_POST['job_description']); // 改行を<br>に変換
 $selected_tags = $_POST['selected_tags']; // フォームからタグを取得
 
 
-// 画像アップロードの処理
+// 画像アップロードの処理ここから
 $image_path = '';
 if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
     $target_dir = "uploads/"; // 画像を保存するディレクトリ
@@ -42,6 +42,7 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
         echo "ファイルは画像ではありません。";
     }
 }
+// 画像アップロードの処理ここまで
 
 // 入力項目を取得する処理
 $selected_tags = $_POST['selected_tags']; // フォームからタグを取得

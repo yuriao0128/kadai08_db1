@@ -74,6 +74,8 @@
                     echo '<div class="tags">';
                             // タグを表示
                              echo '<div class="tags read-only">'; // read-onlyクラスを追加
+
+        // 複数データのカラム登録　を　カンマ区切りでデータへ保存していく 
         if (!empty($data[12])) { // 12番目のカラムがタグ
             $tags = explode(', ', $data[12]); // カンマで区切って配列に変換
             foreach ($tags as $tag) {
@@ -82,14 +84,14 @@
         }
         echo '</div>';
      echo '</div>';
-
+ 
                     echo '<p><strong style="font-size: 20px; ">' . htmlspecialchars($data[1]) ." / ".htmlspecialchars($data[2]). '</strong></p>'; // 企業名
                     echo '<p><i class="fa-solid fa-yen-sign"  style="color: #00b8b8;"></i>  ' . htmlspecialchars($data[3]) . '</p>'; // 月給
                     echo '<p><i class="fa-solid fa-location-dot" style="color: #00b8b8;"></i> ' . htmlspecialchars($data[4]) . '</p>'; // 住所
                     echo '<p><i class="fa-regular fa-clock"  style="color: #00b8b8;"></i>  ' . htmlspecialchars($data[5]) ."〜". htmlspecialchars($data[6]). '</p>'; // 就業時間
                     echo '<p><i class="fa-solid fa-tag"  style="color: #00b8b8;"></i>  ' . htmlspecialchars($data[7]) . '</p>'; // 募集条件
-                    echo '<p><i class="fa-regular fa-clock"  style="color: #00b8b8;"></i>  ' . htmlspecialchars($data[8]) . '</p>'; // 募集背景
-                    echo '<p><i class="fa-regular fa-clock"  style="color: #00b8b8;"></i>  ' . htmlspecialchars($data[9]) . '</p>'; // 雇用形態
+                    echo '<p><i class="fa-regular fa-heart"  style="color: #00b8b8;"></i>  ' . htmlspecialchars($data[8]) . '</p>'; // 募集背景
+                    echo '<p><i class="fa-regular fa-heart"  style="color: #00b8b8;"></i>  ' . htmlspecialchars($data[9]) . '</p>'; // 雇用形態
                     echo '<p><i class="fa-solid fa-briefcase"  style="color: #00b8b8;"></i>'  . htmlspecialchars($data[10]) . '</p>'; //業務内容
                     echo '</div>';
 

@@ -35,8 +35,10 @@
     </div>
 </header>
 
+<!-- 画像をアップロードする時はenctype属性を忘れずに -->
 <form action="write.php" method="post" id="post" enctype="multipart/form-data">
     <h2>求人情報の登録</h2>
+    <!-- 複数データを取得する -->
     <p><i class="fa-solid fa-tag" style="color: #00b8b8;"></i>  おすすめポイントをタグで登録</p>
     <div class="tag-selection">
     <div class="tag" data-tag="リモートワーク"><i class="fa-solid fa-tag" style="color: #00b8b8;"></i> リモートワーク</div>
