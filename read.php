@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -30,6 +31,7 @@
     </header>
 
         <?php 
+        
     // ファイルを変数に格納し、データを読み取る処理
     $filename = 'data.csv';
 
@@ -75,7 +77,7 @@
                             // タグを表示
                              echo '<div class="tags read-only">'; // read-onlyクラスを追加
 
-        // 複数データのカラム登録　を　カンマ区切りでデータへ保存していく 
+        // 複数データ（値）を1つのカラムに登録　▶︎　カンマ区切りでデータし変換
         if (!empty($data[12])) { // 12番目のカラムがタグ
             $tags = explode(', ', $data[12]); // カンマで区切って配列に変換
             foreach ($tags as $tag) {
@@ -84,7 +86,6 @@
         }
         echo '</div>';
      echo '</div>';
- 
                     echo '<p><strong style="font-size: 20px; ">' . htmlspecialchars($data[1]) ." / ".htmlspecialchars($data[2]). '</strong></p>'; // 企業名
                     echo '<p><i class="fa-solid fa-yen-sign"  style="color: #00b8b8;"></i>  ' . htmlspecialchars($data[3]) . '</p>'; // 月給
                     echo '<p><i class="fa-solid fa-location-dot" style="color: #00b8b8;"></i> ' . htmlspecialchars($data[4]) . '</p>'; // 住所

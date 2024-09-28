@@ -47,15 +47,75 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
 // 入力項目を取得する処理
 $selected_tags = $_POST['selected_tags']; // フォームからタグを取得
 
-// CSVに書き込む
+// CSVに書き込む  START　▶︎　タグのみcsv
 $filename = 'data.csv';
-$data = [$display_name, $company_name, $job_title, $salary, $address, $start_time,$end_time, $qualifications, $background, $employment_type, $job_description,$image_path,$selected_tags];
+$data = [$selected_tags];
 $fp = fopen($filename, 'a');
 fputcsv($fp, $data);
 fclose($fp);
+// CSVに書き込む　END
 
-// 登録完了後にリダイレクト
-header('Location: read.php');
-exit();
 
-?>
+
+// 2．DB接続（PHP08課題）START
+//PDO php datebase object
+// try {
+//     //Password:MAMP='root',XAMPP=''　MAMP = パスワードがroot
+//     $pdo = new PDO('mysql:dbname=beshift_bc_db;charset=utf8;host=mysql80.beshift.sakura.ne.jp','beshift_bc_db','Aa846251'); //rootは固定　サクラの時は変更が必要！ 'パスワード入れる'
+//   } catch (PDOException $e) {
+//     exit('DB_CONECT:'.$e->getMessage()); //エラーが表示される
+//     // DB_CONECTは自分で把握をするための文字、なくてもOK
+//     // exitを使うとここで止める
+//   }
+
+  // function db_conn(){
+    try {
+      // db_name, db_host, db_id, db_pwをご自身のものに書き換えて使用して下さい
+        $db_name =  'beshift_bc_db';            //データベース名 
+        $db_host =  'mysql80.beshift.sakura.ne.jp';  //DBホスト
+        $db_id =    '***';          //アカウント名(登録しているドメイン)　
+        $db_pw =    '***';           //さくらサーバのパスワード 
+        //下2段：データベースのidとpwでも検証済み
+        
+        $server_info ='mysql:dbname='.$db_name.';charset=utf8;host='.$db_host;
+        $pdo = new PDO($server_info, $db_id, $db_pw);
+        // return $pdo;
+
+    } catch (PDOException $e) {
+        exit('DB Connection Error:' . $e->getMessage());
+    }
+// }
+  
+  //３．データ登録SQL作成 ここで初めてSQLが設定される！
+  $sql = "INSERT INTO gs_bm_table(id,display_name,company_name,job_title,salary,address,start_time,end_time,qualifications,background,employment_type,job_description,image_path,selected_tags)
+VALUES(NULL,:display_name,:company_name,:job_title,:salary,:address,:start_time,:end_time,:qualifications,:background,:employment_type,:job_description,:image_path,:selected_tags)";
+
+  $stmt = $pdo->prepare($sql); 
+  $stmt->bindValue(':display_name', $display_name, PDO::PARAM_STR); 
+  $stmt->bindValue(':company_name', $company_name, PDO::PARAM_STR); 
+  $stmt->bindValue(':job_title', $job_title, PDO::PARAM_STR); 
+  $stmt->bindValue(':salary', $salary, PDO::PARAM_INT); 
+  $stmt->bindValue(':address', $address, PDO::PARAM_STR); 
+  $stmt->bindValue(':start_time', $start_time, PDO::PARAM_STR); 
+  $stmt->bindValue(':end_time', $end_time, PDO::PARAM_STR); 
+  $stmt->bindValue(':qualifications', $qualifications, PDO::PARAM_STR); 
+  $stmt->bindValue(':background', $background, PDO::PARAM_STR); 
+  $stmt->bindValue(':employment_type', $employment_type, PDO::PARAM_STR); 
+  $stmt->bindValue(':job_description', $job_description, PDO::PARAM_STR); 
+  $stmt->bindValue(':image_path', $image_path, PDO::PARAM_STR); 
+  $stmt->bindValue(':selected_tags', $selected_tags, PDO::PARAM_STR); 
+  
+  $status = $stmt->execute(); //ここで初めてSQLが設定される！ true or false
+  
+  //４．データ登録処理後
+  if($status==false){
+    //SQL実行時にエラーがある場合（エラーオブジェクト取得して表示）
+    $error = $stmt->errorInfo();
+    exit("SQL:ERROR:".$error[2]); //2列目が認識できるエラー
+  }else{
+    //５．index.phpへリダイレクト
+    header("Location: index.php"); //必ずLは大文字、半角もいれて
+    exit();
+  }
+  ?>
+ <!-- DB接続（PHP08課題）END -->

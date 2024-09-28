@@ -77,6 +77,13 @@
     color: #333;
   }
 
+  .card-container {
+    display: flex;
+    justify-content: center; /* 横方向に中央寄せ */
+    flex-wrap: wrap; /* カードを折り返すように設定 */
+    gap: 20px; /* カード間のスペースを調整 */
+}
+
 .card {
   padding:0 auto;
   background-color: white;
@@ -532,4 +539,45 @@ p {
     .nav-menu li a span {
         display: none; /* テキストを非表示にする */
     }
+}
+
+/* 検索フォームのスタイル調整 */
+.search-container {
+  width: 60% !important;
+  margin: 0 auto 30px auto; /* カードと検索欄の横幅を揃え、中央寄せ */
+  text-align: center;
+}
+
+.search-form {
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input {
+  width: 50%!important;
+  padding: 10px!important;
+  font-size: 14px!important;
+  border: 1px solid #ccc!important;
+  border-radius: 5px!important;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.1)!important;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease!important;
+}
+
+.search-button {
+  padding: 10px;
+  background-color: #00b8b8; /* ホームの文字色に揃える */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+.search-button i {
+  font-size: 16px; /* アイコンのサイズ調整 */
+}
+
+.search-button:hover {
+  background-color: #007575;
 }
